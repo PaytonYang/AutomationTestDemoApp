@@ -1,0 +1,19 @@
+{
+  "TestClassA": {
+    "DLLName": "TestLibrary",
+    "Namespace": "TestLibrary",
+    "ClassName": "TestClassA",
+    "Parameters": [
+      {
+        "ParameterName": "ipAddress",
+        "ParameterValue": "127.0.0.1",
+        "Format": "String"
+      },
+      {
+        "ParameterName": "port",
+        "ParameterValue": 5555,
+        "Format": "Int32"
+      }
+    ]
+  }
+}
