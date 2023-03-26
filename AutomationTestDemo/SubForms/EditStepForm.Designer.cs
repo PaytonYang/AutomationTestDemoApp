@@ -67,7 +67,7 @@
             this.stopIfFail_No.AutoSize = true;
             this.stopIfFail_No.Location = new System.Drawing.Point(175, 83);
             this.stopIfFail_No.Name = "stopIfFail_No";
-            this.stopIfFail_No.Size = new System.Drawing.Size(43, 19);
+            this.stopIfFail_No.Size = new System.Drawing.Size(41, 19);
             this.stopIfFail_No.TabIndex = 4;
             this.stopIfFail_No.Text = "No";
             this.stopIfFail_No.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.stopIfFail_Yes.Checked = true;
             this.stopIfFail_Yes.Location = new System.Drawing.Point(111, 83);
             this.stopIfFail_Yes.Name = "stopIfFail_Yes";
-            this.stopIfFail_Yes.Size = new System.Drawing.Size(44, 19);
+            this.stopIfFail_Yes.Size = new System.Drawing.Size(42, 19);
             this.stopIfFail_Yes.TabIndex = 4;
             this.stopIfFail_Yes.TabStop = true;
             this.stopIfFail_Yes.Text = "Yes";
@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Step Name:";
             // 
@@ -116,7 +116,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 15);
+            this.label2.Size = new System.Drawing.Size(142, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Default Action Delay(ms):";
             // 
@@ -132,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(20, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
+            this.label3.Size = new System.Drawing.Size(65, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Stop If Fail:";
             // 
@@ -153,7 +153,7 @@
             this.finalStepRadioButton.AutoSize = true;
             this.finalStepRadioButton.Location = new System.Drawing.Point(211, 30);
             this.finalStepRadioButton.Name = "finalStepRadioButton";
-            this.finalStepRadioButton.Size = new System.Drawing.Size(82, 19);
+            this.finalStepRadioButton.Size = new System.Drawing.Size(78, 19);
             this.finalStepRadioButton.TabIndex = 0;
             this.finalStepRadioButton.Text = "Final-Step";
             this.finalStepRadioButton.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             this.preStepRadioButton.AutoSize = true;
             this.preStepRadioButton.Location = new System.Drawing.Point(111, 30);
             this.preStepRadioButton.Name = "preStepRadioButton";
-            this.preStepRadioButton.Size = new System.Drawing.Size(74, 19);
+            this.preStepRadioButton.Size = new System.Drawing.Size(70, 19);
             this.preStepRadioButton.TabIndex = 0;
             this.preStepRadioButton.Text = "Pre-Step";
             this.preStepRadioButton.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.normalStepRadioButton.Checked = true;
             this.normalStepRadioButton.Location = new System.Drawing.Point(20, 30);
             this.normalStepRadioButton.Name = "normalStepRadioButton";
-            this.normalStepRadioButton.Size = new System.Drawing.Size(68, 19);
+            this.normalStepRadioButton.Size = new System.Drawing.Size(65, 19);
             this.normalStepRadioButton.TabIndex = 0;
             this.normalStepRadioButton.TabStop = true;
             this.normalStepRadioButton.Text = "Normal";
@@ -198,6 +198,7 @@
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditStepForm";

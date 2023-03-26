@@ -33,11 +33,19 @@ public class TestClassA
 
     public Dictionary<string, string> PassMethod_NoParameters()
     {
-        return new Dictionary<string, string> { { "Result", "Pass" } };
+        try
+        {
+            return new Dictionary<string, string> { { "Result", "Pass" } };
+        }
+        catch { throw; }
     }
 
     public Dictionary<string, string> ErrorMethod()
     {
-        throw new Exception("ErrorMethod is executed");
+        try
+        {
+            throw new Exception("ErrorMethod is executed");
+        }
+        catch { throw; }
     }
 }

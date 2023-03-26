@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Net.Mail;
 using System.Reflection;
 using System.Text.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace AutomationTestDemo;
 
@@ -32,7 +33,6 @@ public partial class Main : Form
             {
                 this._scriptTree.ClearTestReulst();
                 this.passTextBox.Text = ""; this.failTextBox.Text = ""; this.totalTextBox.Text = "";
-                _scriptModeSwitch(true);
                 _manager = new ScriptTestManager();
                 _manager.ActionPositionCallBack = _onActionPosition;
                 _manager.ActionCompletedCallBack = _onActionCompleted;
@@ -43,8 +43,7 @@ public partial class Main : Form
                 _manager.ErrorHandleCallBack = _onErrorStop;
                 script.LoopTimes = 1;
                 await Task.Run(() => _manager.RunTest(script));
-                this.stopButton.Enabled = true;
-                this.startButton.Enabled = false;
+                _scriptModeSwitch(true);
             }
             else { MessageBox.Show("Script is empty"); }
         }
@@ -61,9 +60,9 @@ public partial class Main : Form
 
     private void _initializePanel()
     {
+        _loadScriptToScriptTree(@"Resources\DefaultScript.bin");
         this.panel.Controls.Add(_scriptTree);
         _scriptModeSwitch(false);
-        this.stopButton.Enabled = false;
     }
 
     private void _onActionPosition(int actionIndex)
@@ -103,18 +102,20 @@ public partial class Main : Form
 
     private void _onScriptCompleted()
     {
-        MessageBox.Show("Test Finish", "Notification");
         this.Invoke(new Action(() =>
         {
+            MessageBox.Show(this, "Test Finish", "Notification");
             _scriptModeSwitch(false);
-            this.stopButton.Enabled = false;
-            this.startButton.Enabled = true;
         }));
     }
 
     private FailDialogResult _onFailStop(string failMessage)
     {
-        DialogResult result = MessageBox.Show(failMessage, "Fail", MessageBoxButtons.YesNo);
+        DialogResult result = DialogResult.No;
+        this.Invoke(new Action(() =>
+        {
+            result = MessageBox.Show(this, failMessage, "Fail", MessageBoxButtons.YesNo);
+        }));
         if (result == DialogResult.Yes)
         {
             return new FailDialogResult { StopTest = false, ReallyFail = true };
@@ -127,12 +128,11 @@ public partial class Main : Form
 
     private void _onErrorStop(string errorMessage)
     {
-        MessageBox.Show(errorMessage, "Error");
         this.Invoke(new Action(() =>
         {
+            MessageBox.Show(this, errorMessage, "Error");
             _scriptModeSwitch(false);
-            this.stopButton.Enabled = false;
-            this.startButton.Enabled = true;
+
         }));
     }
 
@@ -144,12 +144,20 @@ public partial class Main : Form
             _scriptTree.EditStepForm = null;
             _scriptTree.EditLogicForm = null;
             _scriptTree.ScriptChangedCallBack = null;
+            this.stopButton.Enabled = true;
+            this.startButton.Enabled = false;
+            this.loadButton.Enabled = false;
+            this.stopButton.Enabled = false;
         }
         else
         {
             _scriptTree.EditMode = ScriptTree.Mode.Editor;
             _scriptTree.EditStepForm = _onCallAddStepForm;
             _scriptTree.EditLogicForm = _onCallAddLogicForm;
+            this.stopButton.Enabled = false;
+            this.startButton.Enabled = true;
+            this.loadButton.Enabled = true;
+            this.stopButton.Enabled = true;
         }
     }
 
@@ -189,5 +197,38 @@ public partial class Main : Form
             else { MessageBox.Show("Script is empty"); }
         }
         catch (Exception error) { MessageBox.Show(error.Message); }
+    }
+
+    private void loadButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog()) 
+            {
+                dialog.Filter = "(*.bin)|*.bin";
+                dialog.RestoreDirectory = true;
+                DialogResult result = dialog.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(dialog.FileName))
+                {
+                    _loadScriptToScriptTree(dialog.FileName);
+                }
+            }
+        }
+        catch (Exception error) { MessageBox.Show(error.Message); }
+    }
+
+    private void _loadScriptToScriptTree(string scriptPath)
+    {
+        try
+        {
+            ScriptBase script = ScriptFile.Read(scriptPath);
+            if (script is Script)
+            {
+                this._scriptTree.ClearScript();
+                this._scriptTree.AddNewScript((Script)script);
+            }
+            else { throw new Exception("Wrong script format"); }
+        }
+        catch { throw; }
     }
 }

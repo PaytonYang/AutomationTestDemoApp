@@ -55,11 +55,9 @@
             this.groupBox1.Controls.Add(this.methodLabel);
             this.groupBox1.Controls.Add(this.classLabel);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(413, 329);
+            this.groupBox1.Size = new System.Drawing.Size(321, 260);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Logic Information";
@@ -67,19 +65,17 @@
             // methodComboBox
             // 
             this.methodComboBox.FormattingEnabled = true;
-            this.methodComboBox.Location = new System.Drawing.Point(123, 141);
-            this.methodComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.methodComboBox.Location = new System.Drawing.Point(96, 111);
             this.methodComboBox.Name = "methodComboBox";
-            this.methodComboBox.Size = new System.Drawing.Size(274, 27);
+            this.methodComboBox.Size = new System.Drawing.Size(214, 23);
             this.methodComboBox.TabIndex = 2;
             // 
             // classNameComboBox
             // 
             this.classNameComboBox.FormattingEnabled = true;
-            this.classNameComboBox.Location = new System.Drawing.Point(123, 92);
-            this.classNameComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.classNameComboBox.Location = new System.Drawing.Point(96, 73);
             this.classNameComboBox.Name = "classNameComboBox";
-            this.classNameComboBox.Size = new System.Drawing.Size(274, 27);
+            this.classNameComboBox.Size = new System.Drawing.Size(214, 23);
             this.classNameComboBox.TabIndex = 2;
             // 
             // logicTypeComboBox
@@ -90,10 +86,9 @@
             "Retry",
             "Loop",
             "If Condition"});
-            this.logicTypeComboBox.Location = new System.Drawing.Point(123, 44);
-            this.logicTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.logicTypeComboBox.Location = new System.Drawing.Point(96, 35);
             this.logicTypeComboBox.Name = "logicTypeComboBox";
-            this.logicTypeComboBox.Size = new System.Drawing.Size(274, 27);
+            this.logicTypeComboBox.Size = new System.Drawing.Size(214, 23);
             this.logicTypeComboBox.TabIndex = 2;
             // 
             // parametersGridView
@@ -109,14 +104,13 @@
             this.parametersName,
             this.parametersValue,
             this.parametersType});
-            this.parametersGridView.Location = new System.Drawing.Point(8, 214);
-            this.parametersGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.parametersGridView.Location = new System.Drawing.Point(6, 169);
             this.parametersGridView.Name = "parametersGridView";
             this.parametersGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.parametersGridView.RowHeadersVisible = false;
             this.parametersGridView.RowHeadersWidth = 51;
             this.parametersGridView.RowTemplate.Height = 25;
-            this.parametersGridView.Size = new System.Drawing.Size(386, 101);
+            this.parametersGridView.Size = new System.Drawing.Size(300, 80);
             this.parametersGridView.TabIndex = 1;
             this.parametersGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parametersGridView_CellClick);
             // 
@@ -144,49 +138,44 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 191);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(6, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 19);
+            this.label5.Size = new System.Drawing.Size(69, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Parameters:";
             // 
             // methodLabel
             // 
             this.methodLabel.AutoSize = true;
-            this.methodLabel.Location = new System.Drawing.Point(8, 144);
-            this.methodLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.methodLabel.Location = new System.Drawing.Point(6, 114);
             this.methodLabel.Name = "methodLabel";
-            this.methodLabel.Size = new System.Drawing.Size(72, 19);
+            this.methodLabel.Size = new System.Drawing.Size(57, 15);
             this.methodLabel.TabIndex = 0;
             this.methodLabel.Text = "Function:";
             // 
             // classLabel
             // 
             this.classLabel.AutoSize = true;
-            this.classLabel.Location = new System.Drawing.Point(9, 96);
-            this.classLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.classLabel.Location = new System.Drawing.Point(7, 76);
             this.classLabel.Name = "classLabel";
-            this.classLabel.Size = new System.Drawing.Size(56, 19);
+            this.classLabel.Size = new System.Drawing.Size(45, 15);
             this.classLabel.TabIndex = 0;
             this.classLabel.Text = "Action:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 19);
+            this.label1.Size = new System.Drawing.Size(66, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Logic Type:";
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(312, 352);
-            this.confirmButton.Margin = new System.Windows.Forms.Padding(4);
+            this.confirmButton.Location = new System.Drawing.Point(243, 278);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(116, 29);
+            this.confirmButton.Size = new System.Drawing.Size(90, 23);
             this.confirmButton.TabIndex = 1;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -194,14 +183,18 @@
             // 
             // EditLogicForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 391);
+            this.ClientSize = new System.Drawing.Size(342, 309);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditLogicForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Logic";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parametersGridView)).EndInit();

@@ -39,6 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -50,7 +53,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(892, 175);
+            this.startButton.Location = new System.Drawing.Point(894, 389);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(100, 25);
             this.startButton.TabIndex = 3;
@@ -60,7 +63,7 @@
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(892, 211);
+            this.stopButton.Location = new System.Drawing.Point(894, 422);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(100, 25);
             this.stopButton.TabIndex = 3;
@@ -70,7 +73,7 @@
             // 
             // passTextBox
             // 
-            this.passTextBox.Location = new System.Drawing.Point(892, 79);
+            this.passTextBox.Location = new System.Drawing.Point(895, 258);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.ReadOnly = true;
             this.passTextBox.Size = new System.Drawing.Size(100, 23);
@@ -78,7 +81,7 @@
             // 
             // failTextBox
             // 
-            this.failTextBox.Location = new System.Drawing.Point(892, 126);
+            this.failTextBox.Location = new System.Drawing.Point(895, 305);
             this.failTextBox.Name = "failTextBox";
             this.failTextBox.ReadOnly = true;
             this.failTextBox.Size = new System.Drawing.Size(100, 23);
@@ -87,24 +90,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(892, 62);
+            this.label1.Location = new System.Drawing.Point(895, 241);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
+            this.label1.Size = new System.Drawing.Size(30, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "Pass";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(892, 108);
+            this.label2.Location = new System.Drawing.Point(895, 287);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 15);
+            this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fail";
             // 
             // totalTextBox
             // 
-            this.totalTextBox.Location = new System.Drawing.Point(892, 36);
+            this.totalTextBox.Location = new System.Drawing.Point(895, 215);
             this.totalTextBox.Name = "totalTextBox";
             this.totalTextBox.ReadOnly = true;
             this.totalTextBox.Size = new System.Drawing.Size(100, 23);
@@ -113,17 +116,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(892, 18);
+            this.label3.Location = new System.Drawing.Point(895, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.Size = new System.Drawing.Size(32, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Total";
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(892, 320);
+            this.saveButton.Location = new System.Drawing.Point(893, 47);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 25);
+            this.saveButton.Size = new System.Drawing.Size(101, 25);
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Save Script";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -131,19 +134,48 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(893, 289);
+            this.loadButton.Location = new System.Drawing.Point(893, 16);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(100, 25);
             this.loadButton.TabIndex = 3;
             this.loadButton.Text = "Load Script";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(895, 360);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(99, 23);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(895, 342);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Loop Times";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 466);
+            this.ClientSize = new System.Drawing.Size(1010, 466);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.failTextBox);
@@ -154,8 +186,11 @@
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.panel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Automation Test Demo";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +209,7 @@
         private Label label3;
         private Button saveButton;
         private Button loadButton;
+        private NumericUpDown numericUpDown1;
+        private Label label4;
     }
 }

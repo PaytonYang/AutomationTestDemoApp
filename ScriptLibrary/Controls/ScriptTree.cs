@@ -845,6 +845,7 @@ namespace ScriptLibrary.Controls
             ScriptNode step = new ScriptNode(step_text);
             step.CheckState = (scriptStep.Configure.IsInclude) ? CheckState.Checked : CheckState.Unchecked;
             Step tag = DeepClone(scriptStep);
+            tag.Content.Clear();
             step.Tag = tag;
             ((TreeModel)this.treeView.Model).Root.Nodes.Add(step);
             this.treeView.ExpandAll();
@@ -970,7 +971,7 @@ namespace ScriptLibrary.Controls
             if ((e.Node.Tag as ScriptNode).Text.StartsWith("Step"))
             {
                 e.TextColor = Color.Blue;
-                e.Font = new Font(this.treeView.Font.FontFamily, 10, FontStyle.Bold);
+                e.Font = new Font(this.treeView.Font.FontFamily, 9, FontStyle.Bold);
             }
             if (e.Node.IsSelected)
             {
